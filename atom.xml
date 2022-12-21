@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-21T13:41:25.120Z</updated>
+  <updated>2022-12-21T14:16:12.561Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo搭建博客--未生成index.html文件</title>
+    <link href="http://example.com/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/"/>
+    <id>http://example.com/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/</id>
+    <published>2022-12-21T13:51:09.000Z</published>
+    <updated>2022-12-21T14:16:12.561Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><strong>问题</strong></li></ul>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo搭建blog部署到GitHub，然后打开自己的blog，发现出现404，页面丢失。</span><br></pre></td></tr></table></figure><ul><li><p><strong>原因</strong></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">仔细一下GitHub的blog仓库中没有index.html文件，也就是在搭建hexo时候生成的public文件夹中没有index.html文件，所以导致在部署远端时也就不存在index.html文件。</span><br></pre></td></tr></table></figure></li><li><p><strong>解决问题：</strong></p><p>【出现上述原因是因为我们不小心把_posts文件夹给删除掉】</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;我的blog&quot;</span></span><br></pre></td></tr></table></figure><ul><li>执行这个命令，它会自动生成一个_posts文件夹，然后文件夹里面有一个“我的blog”的文章</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  <span class="comment">//清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g   <span class="comment">//生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d   <span class="comment">//自动生成网站静态文件，并部署到设定的仓库。</span></span><br></pre></td></tr></table></figure><ul><li>依次执行hexo的三连环，将文件部署到远端仓库。【如果一次不成，多执行几次】</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>_post</title>
