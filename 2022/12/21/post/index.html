@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            Markdown基本使用
+            _post
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -32,15 +32,28 @@
 </head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/page.css">
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">Markdown基本使用</h1>
+                <h1 class="header-subtitle">_post</h1>
                 <div class="header-subinfo">
-                    <p class="article-info-text Chinese"></p>
-                    <p class="article-info-text English"></p>                  
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2022-12-21
+                        </span>
+                        
+                            <span id="/2022/12/21/post/" class="leancloud_visitors" data-flag-title="_post">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/12/21/post/"></span>
+                        </span>  
+                    </p>
+                    
+                    
                 </div>
             
         </div>
@@ -49,64 +62,51 @@
 </div>
 <div id="container">
     
-        <!-- 独立页面 -->
-        
-            <div id="article">
-                <div class="article-body">
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                
+                
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="Aaron blog">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>Aaron blog
+        <br>
+        <span class="suffix-box-title">文章出处：</span><a href="/2022/12/21/post/" target="_blank">_post</a>
+        <br>
+        <span class="suffix-box-title">作者签名：</span>简单地活着, 肆意又精彩.
+        <br>
+        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+                
+                
+                <div class="article-prev-next">
                     
-                    <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码块:英文状态下```</span><br></pre></td></tr></table></figure>
-
-<h2 id="2，标题"><a href="#2，标题" class="headerlink" title="2，标题"></a>2，标题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标题语法</span></span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="3，字体"><a href="#3，字体" class="headerlink" title="3，字体"></a>3，字体</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加粗  (建议右击—&gt;B（加粗）)</span></span><br><span class="line">**字体加粗**</span><br><span class="line"><span class="comment">//代码高亮显示</span></span><br><span class="line">==高亮显示==</span><br><span class="line"><span class="comment">//删除线</span></span><br><span class="line">  ~~被删除的文字~~</span><br><span class="line"><span class="comment">//斜线</span></span><br><span class="line">*斜体内容*</span><br></pre></td></tr></table></figure>
-
-<p>&#x2F;&#x2F;加粗<br><strong>字体加粗</strong><br>&#x2F;&#x2F;代码高亮显示<br>&#x3D;&#x3D;高亮显示&#x3D;&#x3D;<br>&#x2F;&#x2F;删除线<br>  <del>被删除的文字</del><br>&#x2F;&#x2F;斜线<br><em>斜体内容</em></p>
-<h2 id="4，引用"><a href="#4，引用" class="headerlink" title="4，引用"></a>4，引用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引用语法</span></span><br><span class="line">&gt;作者</span><br><span class="line">&gt;&gt;作者</span><br><span class="line">&gt;&gt;&gt;作者</span><br></pre></td></tr></table></figure>
-
-<p>&#x2F;&#x2F;引用语法</p>
-<blockquote>
-<p>作者</p>
-<blockquote>
-<p>作者</p>
-<blockquote>
-<p>作者</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="5，分割线"><a href="#5，分割线" class="headerlink" title="5，分割线"></a>5，分割线</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//分割线</span></span><br><span class="line">---（细小）</span><br><span class="line">  ***（宽大）</span><br></pre></td></tr></table></figure>
-
-<h2 id="x2F-x2F-分割线"><a href="#x2F-x2F-分割线" class="headerlink" title="&#x2F;&#x2F;分割线"></a>&#x2F;&#x2F;分割线</h2><hr>
-<h2 id="6-图片的插入"><a href="#6-图片的插入" class="headerlink" title="6.图片的插入"></a>6.图片的插入</h2><p><strong>快捷键：Ctrl+shift+i</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在线图片/本地图片（网上图片复制链接）</span></span><br><span class="line">![我的图片](/image/me.png)--图片路径</span><br></pre></td></tr></table></figure>
-
-<p>&#x2F;&#x2F;在线图片&#x2F;本地图片<br><img src="/image/me.png" alt="我的图片">–图片路径</p>
-<p><img src="/image/me.png" alt="我的图片">–图片路径</p>
-<h2 id="7，超链接"><a href="#7，超链接" class="headerlink" title="7，超链接"></a>7，超链接</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//超链接语法</span></span><br><span class="line">[百度主页](https:<span class="comment">//www.baidu.com/?tn=40020637_5_oem_dg)</span></span><br></pre></td></tr></table></figure>
-
-<p>&#x2F;&#x2F;超链接语法<br><a target="_blank" rel="noopener" href="https://www.baidu.com/?tn=40020637_5_oem_dg">百度主页</a></p>
-<h2 id="8，列表语法"><a href="#8，列表语法" class="headerlink" title="8，列表语法"></a>8，列表语法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无序列表</span></span><br><span class="line">- 目录<span class="number">1</span></span><br><span class="line">- 目录<span class="number">2</span></span><br><span class="line">- 目录<span class="number">3</span></span><br><span class="line"><span class="comment">//有序列表</span></span><br><span class="line">数字+ . 名称</span><br><span class="line">例如：</span><br><span class="line"><span class="number">1</span> . 首页</span><br><span class="line"><span class="number">2</span> . 分类</span><br><span class="line"><span class="number">3</span> . 页眉</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>&#x2F;&#x2F;无序列表</p>
-<ul>
-<li>目录1</li>
-<li>目录2</li>
-<li>目录3<br>&#x2F;&#x2F;有序列表<br>数字+ . 名称<br>例如：<br>1 . 首页<br>2 . 分类<br>3 . 页眉</li>
-<li>世界你好</li>
-<li>我很好</li>
-<li>你呢</li>
-</ul>
-<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><p>鼠标右击——点击插入——表格</p>
-
                     
                 </div>
-                
+            </div>
+            
     <div class="article-comments">
+        
+            <div class="comments-title">
+                评论列表
+            </div>
         
         <div class="comments-content"></div>
     </div>
 
-            </div>
-        
+        </div>
     
 </div>
     <div id="footer"></div>
