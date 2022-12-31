@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            迷失的羊羔
+            计算属性
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -32,108 +32,108 @@
 </head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/index.css">
-<div id="count"></div>
-<div id="header" >
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
+<div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-title">Aaron blog</h1>
-                <h2 class="header-description" id="hitokoto"></h2>
-                <h3 class="header-info" id="hitokotoAuthor"></h3>
+                <h1 class="header-subtitle">计算属性</h1>
+                <div class="header-subinfo">
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2022-12-31
+                        </span>
+                        
+                            <span id="/2022/12/31/计算属性的使用/" class="leancloud_visitors" data-flag-title="计算属性">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/12/31/计算属性的使用/"></span>
+                        </span>  
+                    </p>
+                    
+                    
+                </div>
             
         </div>
     </div>
     
-        <a class="scroll-down" href="javascript:;" target="_self" data-offset="-45">
-            <i class="scroll-down-icon iconfont icon-return"></i>
-        </a>
-    
 </div>
 <div id="container">
     
-        
-            <!-- 首页 -->
-            <div class="articles">
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                <h1 id="计算属性的使用"><a href="#计算属性的使用" class="headerlink" title="计算属性的使用"></a>计算属性的使用</h1><ul>
+<li>所谓计算属性：将属性计算加工之后，成为一个属性</li>
+</ul>
+<h4 id="1，计算属性使用"><a href="#1，计算属性使用" class="headerlink" title="1，计算属性使用"></a>1，计算属性使用</h4><ul>
+<li><p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">姓 <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;text&#x27;</span> <span class="attr">v-model</span>=<span class="string">&#x27;firstName&#x27;</span>&gt;</span></span><br><span class="line">名 <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&#x27;text&#x27;</span> <span class="attr">v-model</span>=<span class="string">&#x27;lastName&#x27;</span>&gt;</span></span><br><span class="line">全名 <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>script</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">        <span class="attr">el</span>:<span class="string">&#x27;#root&#x27;</span></span><br><span class="line">        <span class="attr">data</span>:&#123;</span><br><span class="line">        <span class="attr">firstName</span>:<span class="string">&#x27;张&#x27;</span>，</span><br><span class="line">        <span class="attr">lastName</span>:<span class="string">&#x27;三&#x27;</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">       &#125;</span><br><span class="line">        <span class="attr">computed</span>:&#123;</span><br><span class="line">            <span class="attr">fullName</span>:&#123;</span><br><span class="line">                <span class="comment">//当有人读取fullName时，get就会被调用，且返回值作为我们fullName的值       </span></span><br><span class="line">                <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">                   <span class="keyword">return</span> firstName + <span class="string">&#x27;-&#x27;</span> + lastName</span><br><span class="line">                &#125;       </span><br><span class="line">            &#125;           </span><br><span class="line">        &#125;               </span><br><span class="line">                       </span><br><span class="line">    &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-其他"><a href="#2-其他" class="headerlink" title="2,其他"></a>2,其他</h4><ul>
+<li>计算属性的底层原理：使用的是object.defineProprety()方法</li>
+<li>get函数什么时候执行<ul>
+<li>第一次获取时会执行</li>
+<li>当依赖的 数据发生变化时候会再次执行</li>
+</ul>
+</li>
+<li>备注<ul>
+<li>计算属性最终会出现在vm身上</li>
+<li>如果计算属性要被修改，那必须写set函数去响应修改。</li>
+</ul>
+</li>
+</ul>
+
                 
-                    <div class="article">
-                        <div class="article-title">
-                            <a href="/2022/12/31/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/">计算属性</a>
-                            
-                        </div>
-                        <div class="article-abstract">
-                            
-                        </div>
-                        <div class="clear"></div>
-                        <div class="article-info">
-                            <span>
-                                <i class="iconfont icon-time"></i> 发表时间：2022-12-31
-                            </span>
-                            
-                                <span id="/2022/12/31/计算属性的使用/" class="leancloud_visitors" data-flag-title="计算属性">
-                                    <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                                </span>
-                            
-                            <span>
-                                <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/12/31/计算属性的使用/"></span>
-                            </span>
-                        </div>
-                        <div class="clear"></div>     
-                    </div>
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="Aaron blog">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>Aaron blog
+        <br>
+        <span class="suffix-box-title">文章出处：</span><a href="/2022/12/31/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank">计算属性</a>
+        <br>
+        <span class="suffix-box-title">作者签名：</span>简单地活着, 肆意又精彩.
+        <br>
+        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
                 
-                    <div class="article">
-                        <div class="article-title">
-                            <a href="/2022/12/31/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/">数据代理的使用</a>
-                            
-                        </div>
-                        <div class="article-abstract">
-                            
-                        </div>
-                        <div class="clear"></div>
-                        <div class="article-info">
-                            <span>
-                                <i class="iconfont icon-time"></i> 发表时间：2022-12-31
-                            </span>
-                            
-                                <span id="/2022/12/31/数据代理/" class="leancloud_visitors" data-flag-title="数据代理的使用">
-                                    <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                                </span>
-                            
-                            <span>
-                                <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/12/31/数据代理/"></span>
-                            </span>
-                        </div>
-                        <div class="clear"></div>     
-                    </div>
                 
-                    <div class="article">
-                        <div class="article-title">
-                            <a href="/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/">hexo搭建博客--未生成index.html文件</a>
-                            
-                        </div>
-                        <div class="article-abstract">
-                            
-                        </div>
-                        <div class="clear"></div>
-                        <div class="article-info">
-                            <span>
-                                <i class="iconfont icon-time"></i> 发表时间：2022-12-21
-                            </span>
-                            
-                                <span id="/2022/12/21/hexo搭建博客-未生成index-html文件/" class="leancloud_visitors" data-flag-title="hexo搭建博客--未生成index.html文件">
-                                    <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                                </span>
-                            
-                            <span>
-                                <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/12/21/hexo搭建博客-未生成index-html文件/"></span>
-                            </span>
-                        </div>
-                        <div class="clear"></div>     
-                    </div>
-                
+                <div class="article-prev-next">
+                    
+                    
+                        <a href="/2022/12/31/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/" class="next-prefix">» </a> 下一篇：    <a href="/2022/12/31/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/" title="发布于 2022-12-31 04:37">数据代理的使用</a>
+                    
+                </div>
             </div>
             
+    <div class="article-comments">
         
+            <div class="comments-title">
+                评论列表
+            </div>
+        
+        <div class="comments-content"></div>
+    </div>
+
+        </div>
     
 </div>
     <div id="footer"></div>
@@ -159,7 +159,7 @@
             <div class="menu-list">
                 <ul>
                     
-                        <li class=" active "><a href="/" class="" target="_self"><span class="iconfont icon-home-fill"></span>首页</a></li>
+                        <li class=""><a href="/" class="" target="_self"><span class="iconfont icon-home-fill"></span>首页</a></li>
                     
                         <li class=""><a href="/category" class="" target="_self"><span class="iconfont icon-folder-fill"></span>分类</a></li>
                     
