@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            标签
+            Vue生命周期
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -32,15 +32,36 @@
 </head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/page.css">
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">标签</h1>
+                <h1 class="header-subtitle">Vue生命周期</h1>
                 <div class="header-subinfo">
-                    <p class="article-info-text Chinese"></p>
-                    <p class="article-info-text English"></p>                  
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2023-01-28
+                        </span>
+                        
+                            <span id="/2023/01/28/Vue生命周期/" class="leancloud_visitors" data-flag-title="Vue生命周期">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2023/01/28/Vue生命周期/"></span>
+                        </span>  
+                    </p>
+                    
+                        
+                            <span class="category-color">Vue重点汇总</span>
+                        
+                    
+                    
+                        
+                            <span class="tag-color">生命周期钩子</span>
+                        
+                    
                 </div>
             
         </div>
@@ -49,22 +70,92 @@
 </div>
 <div id="container">
     
-        <!-- 独立页面 -->
-        
-            <div class="tags">
-                <div class="tags-title">
-                    目前共计 5 个标签
-                </div>
-                <div class="tags-content">
-                    <div class="tags-light">
-                        <a href="/tags/computed/" style="font-size: 12px; color: #ccc">computed</a> <a href="/tags/v-for/" style="font-size: 12px; color: #ccc">v-for</a> <a href="/tags/watch/" style="font-size: 12px; color: #ccc">watch</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/" style="font-size: 12px; color: #ccc">数据代理</a> <a href="/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/" style="font-size: 12px; color: #ccc">生命周期钩子</a>
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                <h2 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue的生命周期，就像人的的一生一样，人呢，就是在不同的阶段做该做的事。vue也是一样，vue就是在不同的时间点，调用不同的函数，这个函数也可以叫做是vue生命周期钩子</span><br></pre></td></tr></table></figure>
+
+<h4 id="1，Vue的生命周期解析图"><a href="#1，Vue的生命周期解析图" class="headerlink" title="1，Vue的生命周期解析图"></a>1，Vue的生命周期解析图</h4><p>&#96;&#96;<img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202301281437558.png"></p>
+<h4 id="2，挂载流程"><a href="#2，挂载流程" class="headerlink" title="2，挂载流程"></a>2，挂载流程</h4>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Vue() —&gt; beforecreate —&gt; created —&gt; beforemount —&gt; mounted(挂在完成)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>图解上图所示</li>
+</ul>
+<h4 id="3，更新流程"><a href="#3，更新流程" class="headerlink" title="3，更新流程"></a>3，更新流程</h4><ul>
+<li><p>当挂载完成的数据发生更新时候….</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202301282324405.png" alt="image-20230128232422195"></p>
+</li>
+</ul>
+<h4 id="4，销毁挂载"><a href="#4，销毁挂载" class="headerlink" title="4，销毁挂载"></a>4，销毁挂载</h4><ul>
+<li>当数据挂载完成吗，且数据已经更新，然后销毁挂载….</li>
+</ul>
+<p>​        <img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202301282327930.png" alt="image-20230128232722246"></p>
+<h4 id="5，vue生命周期总结"><a href="#5，vue生命周期总结" class="headerlink" title="5，vue生命周期总结"></a>5，vue生命周期总结</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">常用的生命周期钩子：</span><br><span class="line">		1.mounted: 发送ajax请求、启动定时器、绑定自定义事件、订阅消息等【初始化操作】。</span><br><span class="line">	    2.beforeDestroy: 清除定时器、解绑自定义事件、取消订阅消息等【收尾工作】。</span><br><span class="line"></span><br><span class="line">关于销毁Vue实例</span><br><span class="line">		1.销毁后借助Vue开发者工具看不到任何信息。</span><br><span class="line">		2.销毁后自定义事件会失效，但原生DOM事件依然有效。</span><br><span class="line">		3.一般不会在beforeDestroy操作数据，因为即便操作数据，也不会再触发更新流程了。</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>引出生命周期<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 引入Vue --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;../js/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 准备好一个容器--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">h2</span> <span class="attr">:style</span>=<span class="string">&quot;&#123;opacity&#125;&quot;</span>&gt;</span>欢迎学习Vue<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;opacity = 1&quot;</span>&gt;</span>透明度设置为1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;stop&quot;</span>&gt;</span>点我停止变换<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		<span class="title class_">Vue</span>.<span class="property">config</span>.<span class="property">productionTip</span> = <span class="literal">false</span> <span class="comment">//阻止 vue 在启动时生成生产提示。</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">		 <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="attr">el</span>:<span class="string">&#x27;#root&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">			<span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="attr">opacity</span>:<span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">			&#125;,</span></span><br><span class="line"><span class="language-javascript">			<span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="title function_">stop</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="variable language_">this</span>.$destroy()</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			&#125;,</span></span><br><span class="line"><span class="language-javascript">			<span class="comment">//Vue完成模板的解析并把初始的真实DOM元素放入页面后（挂载完毕）调用mounted</span></span></span><br><span class="line"><span class="language-javascript">			<span class="title function_">mounted</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;mounted&#x27;</span>,<span class="variable language_">this</span>)</span></span><br><span class="line"><span class="language-javascript">				<span class="variable language_">this</span>.<span class="property">timer</span> = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;setInterval&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">					<span class="variable language_">this</span>.<span class="property">opacity</span> -= <span class="number">0.01</span></span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">opacity</span> &lt;= <span class="number">0</span>) <span class="variable language_">this</span>.<span class="property">opacity</span> = <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">				&#125;,<span class="number">16</span>)</span></span><br><span class="line"><span class="language-javascript">			&#125;,</span></span><br><span class="line"><span class="language-javascript">			<span class="title function_">beforeDestroy</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="comment">// 清楚定时器</span></span></span><br><span class="line"><span class="language-javascript">				<span class="built_in">clearInterval</span>(<span class="variable language_">this</span>.<span class="property">timer</span>)</span></span><br><span class="line"><span class="language-javascript">				<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;vm即将销毁&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">			&#125;,</span></span><br><span class="line"><span class="language-javascript">		&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+                
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="Aaron blog">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>Aaron blog
+        <br>
+        <span class="suffix-box-title">文章出处：</span><a href="/2023/01/28/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" target="_blank">Vue生命周期</a>
+        <br>
+        <span class="suffix-box-title">作者签名：</span>简单地活着, 肆意又精彩.
+        <br>
+        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+                
+                    <div class="category">
+                        分类：
+                        
+                            <a href="/categories/Vue%E9%87%8D%E7%82%B9%E6%B1%87%E6%80%BB/">Vue重点汇总</a>
+                        
                     </div>
-                    <div class="tags-dark">
-                        <a href="/tags/computed/" style="font-size: 12px; color: #666">computed</a> <a href="/tags/v-for/" style="font-size: 12px; color: #666">v-for</a> <a href="/tags/watch/" style="font-size: 12px; color: #666">watch</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/" style="font-size: 12px; color: #666">数据代理</a> <a href="/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/" style="font-size: 12px; color: #666">生命周期钩子</a>
+                
+                
+                    <div class="tag">
+                        标签：
+                        
+                            <a href="/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90/">生命周期钩子</a>
+                        
                     </div>
+                
+                <div class="article-prev-next">
+                    
+                    
+                        <a href="/2023/01/08/%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/" class="next-prefix">» </a> 下一篇：    <a href="/2023/01/08/%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93/" title="发布于 2023-01-08 10:09">列表渲染</a>
+                    
                 </div>
             </div>
+            
+    <div class="article-comments">
         
+            <div class="comments-title">
+                评论列表
+            </div>
+        
+        <div class="comments-content"></div>
+    </div>
+
+        </div>
     
 </div>
     <div id="footer"></div>
@@ -94,7 +185,7 @@
                     
                         <li class=""><a href="/category" class="" target="_self"><span class="iconfont icon-folder-fill"></span>分类</a></li>
                     
-                        <li class=" active "><a href="/tag" class="" target="_self"><span class="iconfont icon-discount-fill"></span>标签</a></li>
+                        <li class=""><a href="/tag" class="" target="_self"><span class="iconfont icon-discount-fill"></span>标签</a></li>
                     
                         <li class=""><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
                     
