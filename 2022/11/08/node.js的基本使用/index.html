@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+    <meta name="referrer" content="origin">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>
+        
+            node的基本使用
+        
+    </title>
+    <link rel="shortcut icon" href="#"/>
+
+    <link type="text/css" rel="stylesheet" href="/font/LongCang.css">
+    <link type="text/css" rel="stylesheet" href="/font/Monda.css">
+    <link type="text/css" rel="stylesheet" href="/font/NotoSansSC.css">
+    <link type="text/css" rel="stylesheet" href="/font/NotoSerifSC.css">
+    <link type="text/css" rel="stylesheet" href="/font/Playball.css">
+    <link type="text/css" rel="stylesheet" href="/font/PTMono.css">
+    <link type="text/css" rel="stylesheet" href="/font/Roboto.css">
+    <link type="text/css" rel="stylesheet" href="/font/RobotoSlab.css">
+    <link type="text/css" rel="stylesheet" href="/font/Rosario.css">
+    <link type="text/css" rel="stylesheet" href="/font/UbuntuMono.css">
+
+    <link type="text/css" rel="stylesheet" href="/css/base.css">
+    <link type="text/css" rel="stylesheet" href="/css/code.css">
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="迷失的羊羔" type="application/atom+xml">
+</head>
+<body>
+    <a id="cover"></a>
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
+<div id="header" class="header">
+    <div class="vertical">
+        <div class="inner">
+            
+                <h1 class="header-subtitle">node的基本使用</h1>
+                <div class="header-subinfo">
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2022-11-08
+                        </span>
+                        
+                            <span id="/2022/11/08/node.js的基本使用/" class="leancloud_visitors" data-flag-title="node的基本使用">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/11/08/node.js的基本使用/"></span>
+                        </span>  
+                    </p>
+                    
+                        
+                            <span class="category-color">后端</span>
+                        
+                    
+                    
+                        
+                            <span class="tag-color">nodejs</span>
+                        
+                    
+                </div>
+            
+        </div>
+    </div>
+    
+</div>
+<div id="container">
+    
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                <h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><h2 id="一，node-js和内置模块"><a href="#一，node-js和内置模块" class="headerlink" title="一，node.js和内置模块"></a>一，node.js和内置模块</h2><h3 id="1，初识node-js"><a href="#1，初识node-js" class="headerlink" title="1，初识node.js"></a>1，初识node.js</h3><h4 id="1-浏览器中的JavaScript运行环境"><a href="#1-浏览器中的JavaScript运行环境" class="headerlink" title="1,浏览器中的JavaScript运行环境"></a>1,浏览器中的JavaScript运行环境</h4><p>  <img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651246.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651248.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651249.jpg" alt="a"></p>
+<h4 id="2-javascript能否做后端开发"><a href="#2-javascript能否做后端开发" class="headerlink" title="2,javascript能否做后端开发"></a>2,javascript能否做后端开发</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651250.jpg"></p>
+<h4 id="3-node-js简介"><a href="#3-node-js简介" class="headerlink" title="3,node.js简介"></a>3,node.js简介</h4><h5 id="1，什么是node-js"><a href="#1，什么是node-js" class="headerlink" title="1，什么是node.js"></a>1，什么是node.js</h5><ul>
+<li>是一个基于Chrome v8 引擎的JavaScript运行环境</li>
+</ul>
+<h5 id="2-node-js中的JavaScript运行环境"><a href="#2-node-js中的JavaScript运行环境" class="headerlink" title="2,node.js中的JavaScript运行环境"></a>2,node.js中的JavaScript运行环境</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651251.jpg"></p>
+<ul>
+<li>浏览器是js前端运行环境</li>
+<li>node.js是js后端运行环境</li>
+<li>node.js中无法调用浏览器内置的API</li>
+</ul>
+<h5 id="3-node-js做啥"><a href="#3-node-js做啥" class="headerlink" title="3,node.js做啥"></a>3,node.js做啥</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651252.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651253.jpg"></p>
+<h4 id="4-node-js环境"><a href="#4-node-js环境" class="headerlink" title="4,node.js环境"></a>4,node.js环境</h4><h5 id="1，终端"><a href="#1，终端" class="headerlink" title="1，终端"></a>1，终端</h5><ul>
+<li>terminal。用于实现人机交互的一种方式</li>
+<li>每个系统都有内置终端。可以运行一些终端命令</li>
+</ul>
+<h5 id="2，node-js环境中执行JavaScript代码"><a href="#2，node-js环境中执行JavaScript代码" class="headerlink" title="2，node.js环境中执行JavaScript代码"></a>2，node.js环境中执行JavaScript代码</h5><ul>
+<li><p>1，打开终端</p>
+</li>
+<li><p>2，输入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node js代码路径</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651254.jpg"></p>
+<h4 id="3，终端中的快捷键"><a href="#3，终端中的快捷键" class="headerlink" title="3，终端中的快捷键"></a>3，终端中的快捷键</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651255.jpg"></p>
+<h3 id="2，fs文件系统模块"><a href="#2，fs文件系统模块" class="headerlink" title="2，fs文件系统模块"></a>2，fs文件系统模块</h3><p>####1，什么是fs</p>
+<ul>
+<li><p>fs模块是node.js环境中的内置模块。用来操作文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(),读取文件中的内容</span><br><span class="line">fs.writeFile(),用于指定的文件写入的内容</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>在JavaScript代码中需要引入fs模块</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#x27;fs&#x27;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-读取文件中内容"><a href="#2-读取文件中内容" class="headerlink" title="2,读取文件中内容"></a>2,读取文件中内容</h4><ul>
+<li><p><strong>readFile()语法格式</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(path,[option],callback)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651256.jpg"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&#x27;fs);</span><br><span class="line">fs.readFile(&#x27;1.md&#x27;,(err,data)=&gt;&#123;</span><br><span class="line">  if(err)  return console.log(err.message);</span><br><span class="line">  console.log(data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651257.jpg"></p>
+<h4 id="3-指定文件中写入内容"><a href="#3-指定文件中写入内容" class="headerlink" title="3,指定文件中写入内容"></a>3,指定文件中写入内容</h4><ul>
+<li><p><strong>fs.writeFile()语法格式</strong></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651258.JPG"></p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 引入fs模块</span><br><span class="line">const fs = require(&#x27;fs&#x27;);</span><br><span class="line">const &#123; stringify &#125; = require(&#x27;querystring&#x27;);</span><br><span class="line"></span><br><span class="line">// 给这个文件写入这样的内容。这些内容会覆盖之前文件内容。</span><br><span class="line">fs.writeFile(&#x27;2.md&#x27;, &#x27;追逐祂的脚步，永不动摇&#x27;, (err, data) =&gt; &#123;</span><br><span class="line">    if (err) return console.log(err);</span><br><span class="line">    console.log(fs.readFile(&#x27;2.md&#x27;, (err, data) =&gt; &#123;</span><br><span class="line">        if (err) return console.log(err.message);</span><br><span class="line">        //转为字符串</span><br><span class="line">        console.log(data.toString())</span><br><span class="line">    &#125;));</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651259.jpg"></p>
+<p>【案例】：整理学生成绩</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651260.jpg"></p>
+<ul>
+<li><h1 id="String-prototype-split"><a href="#String-prototype-split" class="headerlink" title="String.prototype.split()"></a>String.prototype.split()</h1><p>使用指定的分隔符字符串将一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a>对象分割成子字符串数组，以一个指定的分割字串来决定每个拆分的位置</p>
+</li>
+<li><h1 id="String-prototype-replace"><a href="#String-prototype-replace" class="headerlink" title="String.prototype.replace()"></a>String.prototype.replace()</h1><p>方法返回一个由替换值（<code>replacement</code>）替换部分或所有的模式（<code>pattern</code>）匹配项后的新字符串。</p>
+</li>
+<li><h1 id="Array-prototype-join"><a href="#Array-prototype-join" class="headerlink" title="Array.prototype.join()"></a>Array.prototype.join()</h1><p> 方法将一个数组（或一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#%E4%BD%BF%E7%94%A8%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1_array-like_objects">类数组对象</a>）的所有元素连接成一个字符串并返回这个字符串，用逗号或指定的分隔符字符串分隔</p>
+</li>
+</ul>
+<h4 id="4，fs模块-路径动态拼接问题"><a href="#4，fs模块-路径动态拼接问题" class="headerlink" title="4，fs模块- 路径动态拼接问题"></a>4，fs模块- 路径动态拼接问题</h4><ul>
+<li>出现路径拼接错误的问题，是因为提供了 .&#x2F;  or ..&#x2F;   开头的相对路径</li>
+<li>解决：可以提供一个绝对路径。（完整的文件存放路径）</li>
+</ul>
+<h3 id="3，path-路径模块"><a href="#3，path-路径模块" class="headerlink" title="3，path 路径模块"></a>3，path 路径模块</h3><h4 id="1，path模块？？"><a href="#1，path模块？？" class="headerlink" title="1，path模块？？"></a>1，path模块？？</h4><ul>
+<li>用来处理路径的模块。</li>
+<li>方法：<ul>
+<li>path.join()：将多个路径片段拼接一个完整的路径字符串</li>
+<li>path.basename()：用来从路径字符串中。将文件名解析出来</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651261.jpg"></p>
+<h4 id="2-路径拼接"><a href="#2-路径拼接" class="headerlink" title="2,路径拼接"></a>2,路径拼接</h4><ul>
+<li><p><strong>path.join([…path])</strong></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651261.jpg"></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651262.jpg"></p>
+<ul>
+<li><strong>以后遇到路径拼接尽量用join（）方法，别用+</strong></li>
+</ul>
+<h4 id="3，获取路径中的文件名"><a href="#3，获取路径中的文件名" class="headerlink" title="3，获取路径中的文件名"></a>3，获取路径中的文件名</h4><ul>
+<li><p><strong>path.basename(path,[…ext])</strong></p>
+<ul>
+<li>可以获取路径中的最后一部分，用这个方法可以获取文件名</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651263.jpg"></p>
+</li>
+</ul>
+<h4 id="4-获取路径中的文件扩展名"><a href="#4-获取路径中的文件扩展名" class="headerlink" title="4,获取路径中的文件扩展名"></a>4,获取路径中的文件扩展名</h4><ul>
+<li><strong>path.extname()</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651264.jpg"></p>
+<p>【案例】时钟案例</p>
+<p><img src="/!%5B%5D(https:/raw.githubusercontent.com/enguang0207/images/main/test/202302161651265.jpg"></p>
+<p><img src="/!%5B%5D(https:/raw.githubusercontent.com/enguang0207/images/main/test/202302161651266.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651267.jpg"></p>
+<h3 id="4-http模块"><a href="#4-http模块" class="headerlink" title="4,http模块"></a>4,http模块</h3><h4 id="1-什么是http模块"><a href="#1-什么是http模块" class="headerlink" title="1,什么是http模块"></a>1,什么是http模块</h4><ul>
+<li>用于创建web服务器的模块。通过http模块提供的http。createServer()方法。就可以将一天电脑变为一个web服务器。</li>
+</ul>
+<h4 id="2，http模块作用"><a href="#2，http模块作用" class="headerlink" title="2，http模块作用"></a>2，http模块作用</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651268.jpg"></p>
+<h4 id="3-服务器相关的概念"><a href="#3-服务器相关的概念" class="headerlink" title="3.服务器相关的概念"></a>3.服务器相关的概念</h4><h5 id="1-ip地址"><a href="#1-ip地址" class="headerlink" title="1,ip地址"></a>1,ip地址</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651269.jpg"></p>
+<ul>
+<li><strong>ping  域名</strong>  ：   查看这个网址的IP</li>
+</ul>
+<h5 id="2-域名和域名服务区"><a href="#2-域名和域名服务区" class="headerlink" title="2,域名和域名服务区"></a>2,域名和域名服务区</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651270.jpg"></p>
+<h5 id="2-端口号"><a href="#2-端口号" class="headerlink" title="2,端口号"></a>2,端口号</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651271.jpg"></p>
+<ul>
+<li>实际应用中，URL里面80 端口可以省略</li>
+<li>每个端口号指定一个web服务</li>
+</ul>
+<h4 id="4，创建基本web服务器"><a href="#4，创建基本web服务器" class="headerlink" title="4，创建基本web服务器"></a>4，创建基本web服务器</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651272.jpg"></p>
+<h5 id="1-基本步骤"><a href="#1-基本步骤" class="headerlink" title="1,基本步骤"></a>1,基本步骤</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 1，引入http模块</span><br><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line"></span><br><span class="line">// 2,创建web服务器实例‘</span><br><span class="line">const server = http.createServer();</span><br><span class="line"></span><br><span class="line">// 3,绑定request请求，监听客户端事件</span><br><span class="line">server.on(&#x27;request&#x27;,(err,data)=&gt;&#123;</span><br><span class="line">    console.log(&#x27;执行回调函数里面内容&#x27;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 4，启动服务器</span><br><span class="line">server.listen(&#x27;80&#x27;,()=&gt;&#123;</span><br><span class="line">    console.log(&#x27;服务已经启动。80端口正在监听中.....&#x27;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-request请求对象"><a href="#2-request请求对象" class="headerlink" title="2 request请求对象"></a>2 request请求对象</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651273.jpg"></p>
+<h5 id="3-response响应对象"><a href="#3-response响应对象" class="headerlink" title="3,response响应对象"></a>3,response响应对象</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651274.jpg"></p>
+<h5 id="4，解决客户端乱码问题"><a href="#4，解决客户端乱码问题" class="headerlink" title="4，解决客户端乱码问题"></a>4，解决客户端乱码问题</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651275.jpg"></p>
+<ul>
+<li>res.serHeader()</li>
+</ul>
+<h5 id="5，根据不同的URL响应不同的HTML内容"><a href="#5，根据不同的URL响应不同的HTML内容" class="headerlink" title="5，根据不同的URL响应不同的HTML内容"></a>5，根据不同的URL响应不同的HTML内容</h5><h5 id="1，核心实现步骤"><a href="#1，核心实现步骤" class="headerlink" title="1，核心实现步骤"></a>1，核心实现步骤</h5><ul>
+<li>获取请求的URL地址</li>
+<li>设置默认的响应内容的为404 not found</li>
+<li>判断用户请求的是否为 &#x2F; 或 &#x2F;index.html 首页</li>
+<li>判断用户请求的是否为 &#x2F;about.html 关于页面</li>
+<li>设置Content-Type 响应头。防止中文乱码</li>
+<li>使用res.end()把内容响应给客户端</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651276.jpg"></p>
+<h5 id="2-实现clock时钟的web服务器"><a href="#2-实现clock时钟的web服务器" class="headerlink" title="2,实现clock时钟的web服务器"></a>2,实现clock时钟的web服务器</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651277.jpg"></p>
+<ul>
+<li>服务器的角色是一个字符串的搬运工</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651278.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651279.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651281.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651282.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651283.jpg"></p>
+<h2 id="二，模块化"><a href="#二，模块化" class="headerlink" title="二，模块化"></a>二，模块化</h2><h3 id="1，模块化基本概念"><a href="#1，模块化基本概念" class="headerlink" title="1，模块化基本概念"></a>1，模块化基本概念</h3><h4 id="1，什么是模块化"><a href="#1，什么是模块化" class="headerlink" title="1，什么是模块化"></a>1，什么是模块化</h4><ul>
+<li><p>编程领域模块化：遵循固定的规则，将一个大文件拆分独立并互相依赖的多个小模块</p>
+</li>
+<li><p>模块化拆分好处：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1,代码复用性</span><br><span class="line">2，代码可维护性</span><br><span class="line">3，实现按需加载</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2，模块化规范"><a href="#2，模块化规范" class="headerlink" title="2，模块化规范"></a>2，模块化规范</h4><ul>
+<li>就是对代码进行模块化的拆分与组合是，需要遵守的那些规则</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651284.jpg"></p>
+<h3 id="2-node-js中模块化"><a href="#2-node-js中模块化" class="headerlink" title="2,node.js中模块化"></a>2,node.js中模块化</h3><ul>
+<li>内置模块</li>
+<li>自定义模块</li>
+<li>第三方模块:第三方模块需要下载</li>
+</ul>
+<h4 id="1，加载模块"><a href="#1，加载模块" class="headerlink" title="1，加载模块"></a>1，加载模块</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651285.jpg"></p>
+<ul>
+<li>在使用require加载自定义模块期间。可以省略.js后缀名</li>
+</ul>
+<h4 id="2，node-js中的模块作用域"><a href="#2，node-js中的模块作用域" class="headerlink" title="2，node.js中的模块作用域"></a>2，node.js中的模块作用域</h4><h5 id="1，什么是模块作用域"><a href="#1，什么是模块作用域" class="headerlink" title="1，什么是模块作用域"></a>1，什么是模块作用域</h5><ul>
+<li>模块作用域：只能在当前模块内被访问。类似函数作用域</li>
+</ul>
+<h5 id="2，模块作用域好处"><a href="#2，模块作用域好处" class="headerlink" title="2，模块作用域好处"></a>2，模块作用域好处</h5><ul>
+<li><p>防止了全局变量污染的问题</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651286.jpg"></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651287.jpg"></p>
+<h4 id="3-共享模块作用域中的成员"><a href="#3-共享模块作用域中的成员" class="headerlink" title="3,共享模块作用域中的成员"></a>3,共享模块作用域中的成员</h4><h5 id="1-module对象"><a href="#1-module对象" class="headerlink" title="1.module对象"></a>1.module对象</h5><ul>
+<li>每个js自定义模块中，都有一个module对象。里面<strong>存储了和当前模块有关信息</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651288.jpg"></p>
+<h5 id="2-module-exports对象"><a href="#2-module-exports对象" class="headerlink" title="2,module.exports对象"></a>2,module.exports对象</h5><ul>
+<li><p>可以使用这个对象。将模块中的成员共享出去，相当于一个通道</p>
+</li>
+<li><p><strong>外界使用require（）方法导入自定义模块时，得到的就是module.exprots所指的对象</strong></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651289.jpg"></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651290.jpg"></p>
+<h5 id="3-共享成员注意点"><a href="#3-共享成员注意点" class="headerlink" title="3,共享成员注意点"></a>3,共享成员注意点</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651291.jpg"></p>
+<h5 id="3-exports对象"><a href="#3-exports对象" class="headerlink" title="3.exports对象"></a>3.exports对象</h5><ul>
+<li>为了简化module.exports.后来你node提供了exports对象。他们两指向同一个对象。<strong>exports始终指向module.exports所指的对象</strong></li>
+</ul>
+<h5 id="4，exports和module-exports使用误区"><a href="#4，exports和module-exports使用误区" class="headerlink" title="4，exports和module.exports使用误区"></a>4，exports和module.exports使用误区</h5><ul>
+<li><p><strong>require()模块时，得到永远是module.exports指向的对象</strong></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651292.jpg"></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651293.jpg"> </p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651294.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651295.jpg"></p>
+<h5 id="5-node-js中的模块化规范"><a href="#5-node-js中的模块化规范" class="headerlink" title="5,node.js中的模块化规范"></a>5,node.js中的模块化规范</h5><ul>
+<li>使用commonJS模块化规范。他规定了<strong>模块化的特性</strong>和<strong>各模块之间如何相互依赖</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651296.jpg"></p>
+<h3 id="3-npm与包"><a href="#3-npm与包" class="headerlink" title="3 npm与包"></a>3 npm与包</h3><h4 id="1，包"><a href="#1，包" class="headerlink" title="1，包"></a>1，包</h4><ul>
+<li>就是第三方模块</li>
+<li>包来源：第三方开发出来的，包都是开源的。下载即用</li>
+</ul>
+<h5 id="1-为啥需要包"><a href="#1-为啥需要包" class="headerlink" title="1,为啥需要包"></a>1,为啥需要包</h5><ul>
+<li>包是基于内置模块封装出来的。提供了更加高级，方便的API,可以极大提高开发效率</li>
+</ul>
+<h5 id="2，从哪下载包"><a href="#2，从哪下载包" class="headerlink" title="2，从哪下载包"></a>2，从哪下载包</h5><p> <img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651297.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651298.jpg"></p>
+<h4 id="2-npm-体验"><a href="#2-npm-体验" class="headerlink" title="2,npm 体验"></a>2,npm 体验</h4><h5 id="1，格式化时间的高级做法"><a href="#1，格式化时间的高级做法" class="headerlink" title="1，格式化时间的高级做法"></a>1，格式化时间的高级做法</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651299.jpg"></p>
+<h5 id="2-项目中安装包命令"><a href="#2-项目中安装包命令" class="headerlink" title="2,项目中安装包命令"></a>2,项目中安装包命令</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install  包名称</span><br><span class="line">npm i 包名称</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-初次装包多了那些文件"><a href="#3-初次装包多了那些文件" class="headerlink" title="3.初次装包多了那些文件"></a>3.初次装包多了那些文件</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651300.jpg"></p>
+<h5 id="4-安装指定版本的的包"><a href="#4-安装指定版本的的包" class="headerlink" title="4,安装指定版本的的包"></a>4,安装指定版本的的包</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i moment@版本号</span><br></pre></td></tr></table></figure>
+
+<h4 id="3，包管理配置文件"><a href="#3，包管理配置文件" class="headerlink" title="3，包管理配置文件"></a>3，包管理配置文件</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651301.jpg"> </p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651302.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651303.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651304.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651305.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651305.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651306.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651307.jpg"></p>
+<h4 id="4-解决下包慢的问题"><a href="#4-解决下包慢的问题" class="headerlink" title="4,解决下包慢的问题"></a>4,解决下包慢的问题</h4><h5 id="1-淘宝npm-镜像服务器"><a href="#1-淘宝npm-镜像服务器" class="headerlink" title="1.淘宝npm 镜像服务器"></a>1.淘宝npm 镜像服务器</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651308.jpg"></p>
+<ul>
+<li>镜像：是一种文件存储形式，一个磁盘上的数据在另一个磁盘上存在一个<strong>完全相同的副本。</strong></li>
+</ul>
+<h5 id="2-切换下包镜像源"><a href="#2-切换下包镜像源" class="headerlink" title="2.切换下包镜像源"></a>2.切换下包镜像源</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651309.jpg"></p>
+<h5 id="3-nrm"><a href="#3-nrm" class="headerlink" title="3.nrm"></a>3.nrm</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651310.jpg"></p>
+<h4 id="3-包的分类"><a href="#3-包的分类" class="headerlink" title="3.包的分类"></a>3.包的分类</h4><h5 id="1-项目包："><a href="#1-项目包：" class="headerlink" title="1,项目包："></a>1,项目包：</h5><p>安装在node_modules目录中的包</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651311.jpg"></p>
+<h5 id="2-全局包"><a href="#2-全局包" class="headerlink" title="2,全局包"></a>2,全局包</h5><ul>
+<li>在执行npm install 命令时候后面添加 -g参数</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651312.jpg"></p>
+<h5 id="5-i5ting-toc"><a href="#5-i5ting-toc" class="headerlink" title="5,i5ting_toc"></a>5,i5ting_toc</h5><ul>
+<li><p>这是一个可以将md文档转换为HTML页面工具</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651313.jpg"></p>
+</li>
+</ul>
+<h5 id="6，规范的包结构"><a href="#6，规范的包结构" class="headerlink" title="6，规范的包结构"></a>6，规范的包结构</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651314.jpg"></p>
+<h3 id="4-模块的加载机制-了解"><a href="#4-模块的加载机制-了解" class="headerlink" title="4,模块的加载机制(了解)"></a>4,模块的加载机制(了解)</h3><ul>
+<li><p>优先从缓冲中加载</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">模块在第一次加载后会被缓存。这也多次调用require（） 不会导致模块的代码被执行多次。模块都会优先从缓存中加载。</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>内置模块的加载机制</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">内置模块是。node.js官方提供的模板，内置模块加载优先级最高。</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>自定义模块加载机制</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651315.jpg"></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651316.jpg"></p>
+<ul>
+<li><p>第三方模块加载机制</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651317.jpg"></p>
+</li>
+<li><p>目录作为模块</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651318.jpg"></p>
+</li>
+</ul>
+<h2 id="三-express"><a href="#三-express" class="headerlink" title="三 express"></a>三 express</h2><h3 id="一-初识express"><a href="#一-初识express" class="headerlink" title="(一)初识express"></a>(一)初识express</h3><h4 id="1，express简介"><a href="#1，express简介" class="headerlink" title="1，express简介"></a>1，express简介</h4><ul>
+<li>express作用和node.js内置的http模块类似，<strong>专门用来创建web服务器的</strong></li>
+<li>express本质是一个npm上的第三方包，<strong>提供快速创建web服务器</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651319.jpg"></p>
+<h5 id="1-express-可以做什么"><a href="#1-express-可以做什么" class="headerlink" title="1,express 可以做什么"></a>1,express 可以做什么</h5><ul>
+<li>web网站服务器：提供web网页资源的服务器</li>
+<li>API接口服务器：</li>
+</ul>
+<h4 id="2-基本使用"><a href="#2-基本使用" class="headerlink" title="2,基本使用"></a>2,基本使用</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i express</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-创建基本web服务器"><a href="#1-创建基本web服务器" class="headerlink" title="1,创建基本web服务器"></a>1,创建基本web服务器</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651320.jpg"></p>
+<h5 id="2-监听GET请求"><a href="#2-监听GET请求" class="headerlink" title="2,监听GET请求"></a>2,监听GET请求</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651321.jpg"></p>
+<h5 id="3-监听POST请求"><a href="#3-监听POST请求" class="headerlink" title="3,监听POST请求"></a>3,监听POST请求</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651322.jpg"></p>
+<h5 id="4，将内容响应给客户端"><a href="#4，将内容响应给客户端" class="headerlink" title="4，将内容响应给客户端"></a>4，将内容响应给客户端</h5><ul>
+<li>通过res.send()方法，可以将处理好的内容，发给客户端</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651323.jpg"></p>
+<h5 id="5-获取URL中携带的查询参数"><a href="#5-获取URL中携带的查询参数" class="headerlink" title="5,获取URL中携带的查询参数"></a>5,获取URL中携带的查询参数</h5><ul>
+<li>req.qurey对象。可以访问客户端通过查询字符串的形式。发送服务器的参数</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651324.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651325.jpg"></p>
+<h5 id="6-获取URL的动态参数"><a href="#6-获取URL的动态参数" class="headerlink" title="6,获取URL的动态参数"></a>6,获取URL的动态参数</h5><ul>
+<li>通过req.param对象。可以访问得到URL。通过匹配到的<strong>动态参数</strong>。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651326.jpg"></p>
+<h4 id="3-托管静态资源"><a href="#3-托管静态资源" class="headerlink" title="3,托管静态资源"></a>3,托管静态资源</h4><h5 id="1，express-static"><a href="#1，express-static" class="headerlink" title="1，express.static"></a>1，express.static</h5><ul>
+<li>通过这个，我们可以非常方便的<strong>创建一个静态资源服务器</strong>，例</li>
+<li><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651327.jpg"></li>
+<li>express在指定的<strong>静态目录中查找文件，并且对外提供资源的访问路径</strong>。因此存放静态文件的目录名不会出现在URL中</li>
+</ul>
+<h5 id="2-托管多个静态资源目录"><a href="#2-托管多个静态资源目录" class="headerlink" title="2 托管多个静态资源目录"></a>2 托管多个静态资源目录</h5><ul>
+<li><strong>多次调用express.static()函数</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651328.jpg"></p>
+<h5 id="3-挂载路径前缀"><a href="#3-挂载路径前缀" class="headerlink" title="3,挂载路径前缀"></a>3,挂载路径前缀</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651329.jpg"></p>
+<ul>
+<li>它的作用：如果想访问某个目录，<strong>我们就挂载路径前缀</strong>。好处是当<strong>我们想访问指定目录的文件就很方便</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651290.jpg"></p>
+<h3 id="（二）express路由"><a href="#（二）express路由" class="headerlink" title="（二）express路由"></a>（二）express路由</h3><h4 id="1，路由概念"><a href="#1，路由概念" class="headerlink" title="1，路由概念"></a>1，路由概念</h4><h5 id="1，express中的路由"><a href="#1，express中的路由" class="headerlink" title="1，express中的路由"></a>1，express中的路由</h5><ul>
+<li>指<strong>客户端的请求</strong>与<strong>服务器处理函数</strong>之间的<strong>映射关系</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651330.jpg"></p>
+<ul>
+<li>路由三部分组成：<strong>请求类型  请求的URL地址 处理函数</strong></li>
+</ul>
+<h5 id="2，路由匹配的过程"><a href="#2，路由匹配的过程" class="headerlink" title="2，路由匹配的过程"></a>2，路由匹配的过程</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651331.jpg"></p>
+<h4 id="2-路由的使用"><a href="#2-路由的使用" class="headerlink" title="2 路由的使用"></a>2 路由的使用</h4><h5 id="1，简单用法"><a href="#1，简单用法" class="headerlink" title="1，简单用法"></a>1，简单用法</h5><ul>
+<li><p>将路由挂载服务器上</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&#x27;express);</span><br><span class="line"></span><br><span class="line">//创建web服务器</span><br><span class="line">const APP = express();</span><br><span class="line">//路由挂载,监听客户端的请求地址</span><br><span class="line">APP.get(&#x27;/&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">  res.send(&#x27;hello&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line">APP.post(&#x27;/&#x27;,(req,res)=&gt;&#123;</span><br><span class="line">  res.send(&#x27;hello&#x27;)</span><br><span class="line">&#125;)</span><br><span class="line">//启动web服务器</span><br><span class="line">APP.listen(&#x27;8000&#x27;,()=&gt;&#123;</span><br><span class="line">  console.log(服务器已经启动，端口监听中...http://127.0.0.1);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="2，模块化路由"><a href="#2，模块化路由" class="headerlink" title="2，模块化路由"></a>2，模块化路由</h5><ul>
+<li><strong>为了方便管理</strong>，express<strong>不建议</strong>将路由直接挂载到APP上。<strong>推荐将路由抽离为单独的模块</strong></li>
+<li>创建路由模块</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651332.jpg"></p>
+<ul>
+<li>注册路由模块</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651333.jpg"></p>
+<h5 id="3，为路由模块添加前缀"><a href="#3，为路由模块添加前缀" class="headerlink" title="3，为路由模块添加前缀"></a>3，为路由模块添加前缀</h5><ul>
+<li><p>类似托管静态资源，为静态资源统一挂载访问前缀一样</p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651290.jpg"></p>
+</li>
+</ul>
+<h3 id="三-，express中间件"><a href="#三-，express中间件" class="headerlink" title="(三)，express中间件"></a>(三)，express中间件</h3><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651334.jpg"></p>
+<h4 id="1-中间间概念"><a href="#1-中间间概念" class="headerlink" title="1,中间间概念"></a>1,中间间概念</h4><h5 id="1-express中间件调用流程"><a href="#1-express中间件调用流程" class="headerlink" title="1.express中间件调用流程"></a>1.express中间件调用流程</h5><ul>
+<li><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651335.jpg"></li>
+</ul>
+<h5 id="2-express中间件的格式"><a href="#2-express中间件的格式" class="headerlink" title="2,express中间件的格式"></a>2,express中间件的格式</h5><ul>
+<li>本质上是一个function处理函数。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651335.jpg"></p>
+<h5 id="3-next-函数的作用"><a href="#3-next-函数的作用" class="headerlink" title="3,next 函数的作用"></a>3,next 函数的作用</h5><ul>
+<li><strong>它是实现多个中间件连续调用的关键</strong>。表示<strong>将流转关系转交给下一个中间件或路由</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651337.jpg"></p>
+<h4 id="2-中间件体验"><a href="#2-中间件体验" class="headerlink" title="2,中间件体验"></a>2,中间件体验</h4><h5 id="1-最简单中间件"><a href="#1-最简单中间件" class="headerlink" title="1,最简单中间件"></a>1,最简单中间件</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651338.jpg"></h5><h5 id="2，全局生效中间件"><a href="#2，全局生效中间件" class="headerlink" title="2，全局生效中间件"></a>2，全局生效中间件</h5><ul>
+<li>客户端发起的<strong>任何请求</strong>，<strong>到达服务器都会出发中间件</strong>。叫做全局生效的中间件 </li>
+<li>通过<strong>调用app.use(中间件函数)<strong>。可以定义一个</strong>全局生效</strong>的中间件</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651339.jpg"></p>
+<h5 id="3，定义全局中间件的简易形式"><a href="#3，定义全局中间件的简易形式" class="headerlink" title="3，定义全局中间件的简易形式"></a>3，定义全局中间件的简易形式</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651340.jpg"></p>
+<h5 id="4-中间件的作用（实际）"><a href="#4-中间件的作用（实际）" class="headerlink" title="4,中间件的作用（实际）"></a>4,中间件的作用（实际）</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651341.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651342.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651343.jpg"></p>
+<h5 id="5-定义多个中间件"><a href="#5-定义多个中间件" class="headerlink" title="5,定义多个中间件"></a>5,定义多个中间件</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651344.jpg"></p>
+<h5 id="6，局部生效的中间件"><a href="#6，局部生效的中间件" class="headerlink" title="6，局部生效的中间件"></a>6，局部生效的中间件</h5><ul>
+<li><strong>不适用app.use()定义的中间件</strong>，叫做局部生效的中间件</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651345.jpg"></p>
+<ul>
+<li><p>可以定义多个局部中间件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在路由中。添加局部中间件就好</span><br><span class="line"></span><br><span class="line">添加方式：直接添加。和数组形式添加</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="7-中间件的使用事项"><a href="#7-中间件的使用事项" class="headerlink" title="7.中间件的使用事项"></a>7.中间件的使用事项</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651346.jpg"></p>
+<h4 id="3-中间件的分类"><a href="#3-中间件的分类" class="headerlink" title="3,中间件的分类"></a>3,中间件的分类</h4><h5 id="1，应用级别的中间件"><a href="#1，应用级别的中间件" class="headerlink" title="1，应用级别的中间件"></a>1，应用级别的中间件</h5><ul>
+<li>通过**app.use()或者app.post()<strong>，或者</strong>app.get()**绑定到实例上的中间件，叫做应用级别中间件</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651347.jpg"></p>
+<h5 id="2-路由级别的中间件"><a href="#2-路由级别的中间件" class="headerlink" title="2,路由级别的中间件"></a>2,路由级别的中间件</h5><ul>
+<li><p>绑定到express.Route()实例上的中间件。用法和应用级别中间件没有任何区别。</p>
+</li>
+<li><p><strong>应用级别中间件绑定在app实例。路由级别中间件绑定到router实例上面</strong></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651348.jpg"></p>
+</li>
+</ul>
+<h5 id="3-错误级别中间件"><a href="#3-错误级别中间件" class="headerlink" title="3,错误级别中间件"></a>3,错误级别中间件</h5><ul>
+<li><p>作用：专<strong>门用来捕获整个项目中发生的异常错误</strong>。防止项目异常崩溃的问题</p>
+</li>
+<li><p>格式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(err,req,res,next)=&gt;&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651349.jpg"></p>
+</li>
+</ul>
+<h5 id="4-express内置的中间件"><a href="#4-express内置的中间件" class="headerlink" title="4 express内置的中间件"></a>4 express内置的中间件</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651350.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651351.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651352.jpg"></p>
+<ul>
+<li><strong>如果没有任何解析表单数据的中间件。req.body默认返回unde</strong></li>
+</ul>
+<h5 id="5-第三方中间件"><a href="#5-第三方中间件" class="headerlink" title="5,第三方中间件"></a>5,第三方中间件</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651353.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651354.jpg"></p>
+<h4 id="4-自定义中间件"><a href="#4-自定义中间件" class="headerlink" title="4,自定义中间件"></a>4,自定义中间件</h4><h5 id="1，需求描述与实现步骤"><a href="#1，需求描述与实现步骤" class="headerlink" title="1，需求描述与实现步骤"></a>1，需求描述与实现步骤</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651355.jpg"></p>
+<h3 id="三-使用express写接口"><a href="#三-使用express写接口" class="headerlink" title="(三)使用express写接口"></a>(三)使用express写接口</h3><h4 id="1，创建基本服务器"><a href="#1，创建基本服务器" class="headerlink" title="1，创建基本服务器"></a>1，创建基本服务器</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651356.jpg"></p>
+<h4 id="2，创建API路由模块"><a href="#2，创建API路由模块" class="headerlink" title="2，创建API路由模块"></a>2，创建API路由模块</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651357.jpg"></p>
+<h4 id="3-编写GET接口"><a href="#3-编写GET接口" class="headerlink" title="3,编写GET接口"></a>3,编写GET接口</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651358.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651359.jpg"></p>
+<h4 id="4-编写post接口"><a href="#4-编写post接口" class="headerlink" title="4,编写post接口"></a>4,编写post接口</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651360.jpg"></p>
+<h4 id="5，CORS跨域资源共享"><a href="#5，CORS跨域资源共享" class="headerlink" title="5，CORS跨域资源共享"></a>5，CORS跨域资源共享</h4><h5 id="1，接口跨域问题"><a href="#1，接口跨域问题" class="headerlink" title="1，接口跨域问题"></a>1，接口跨域问题</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651361.jpg"></p>
+<h5 id="2-使用cors中间件解决跨域"><a href="#2-使用cors中间件解决跨域" class="headerlink" title="2,使用cors中间件解决跨域"></a>2,使用cors中间件解决跨域</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651362.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651363.jpg"></p>
+<h5 id="3-什么是cors"><a href="#3-什么是cors" class="headerlink" title="3,什么是cors"></a>3,什么是cors</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651364.jpg"></p>
+<h5 id="4-cors注意事项"><a href="#4-cors注意事项" class="headerlink" title="4 cors注意事项"></a>4 cors注意事项</h5><p> <img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651346.jpg"></p>
+<h5 id="5-cors响应头部"><a href="#5-cors响应头部" class="headerlink" title="5,cors响应头部"></a>5,cors响应头部</h5><p>- </p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651365.jpg"></p>
+<p>- </p>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651366.jpg"></p>
+<p>- </p>
+<h5 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651367.jpg"></h5><h5 id="6-cors请求的分类"><a href="#6-cors请求的分类" class="headerlink" title="6,cors请求的分类"></a>6,cors请求的分类</h5><ul>
+<li>客户端请求cors接口时候。根据请求方式和请求头的不同。可以cors请求分为两大类<ul>
+<li>简单请求</li>
+<li>预检请求</li>
+</ul>
+</li>
+</ul>
+<h5 id="7，简单请求"><a href="#7，简单请求" class="headerlink" title="7，简单请求"></a>7，简单请求</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651368.jpg"></p>
+<h5 id="8-预检请求"><a href="#8-预检请求" class="headerlink" title="8.预检请求"></a>8.预检请求</h5><ul>
+<li>刚好与简单请求相反</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651369.jpg"></p>
+<h5 id="9-他们两的区别"><a href="#9-他们两的区别" class="headerlink" title="9,他们两的区别"></a>9,他们两的区别</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651370.jpg"></p>
+<h4 id="6-JSONP接口"><a href="#6-JSONP接口" class="headerlink" title="6,JSONP接口"></a>6,JSONP接口</h4><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651371.jpg"></p>
+<h5 id="1-创建JSONP接口的注意事项"><a href="#1-创建JSONP接口的注意事项" class="headerlink" title="1.创建JSONP接口的注意事项"></a>1.创建JSONP接口的注意事项</h5><ul>
+<li>如果项目中已经配置了cors跨域资源共享。为了防止冲突。必须在配置cors中间件之前声明JSONP接口。否则JSONP接口，会被处理成开启cors接口</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651372.jpg"></p>
+<h5 id="2-实现具体代码"><a href="#2-实现具体代码" class="headerlink" title="2,实现具体代码"></a>2,实现具体代码</h5><p><img src="https://raw.githubusercontent.com/enguang0207/images/main/test/202302161651947.jpg"></p>
+
+                
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="Aaron blog">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>Aaron blog
+        <br>
+        <span class="suffix-box-title">文章出处：</span><a href="/2022/11/08/node.js%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" target="_blank">node的基本使用</a>
+        <br>
+        <span class="suffix-box-title">作者签名：</span>简单地活着, 肆意又精彩.
+        <br>
+        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+                
+                    <div class="category">
+                        分类：
+                        
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+                        
+                    </div>
+                
+                
+                    <div class="tag">
+                        标签：
+                        
+                            <a href="/tags/nodejs/">nodejs</a>
+                        
+                    </div>
+                
+                <div class="article-prev-next">
+                    
+                        <a href="/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/" class="prev-prefix">« </a> 上一篇：    <a href="/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/" title="发布于 2022-12-21 09:51">hexo搭建博客--未生成index.html文件</a>
+                        <br>
+                    
+                    
+                        <a href="/2022/10/03/axios%E5%85%A5%E9%97%A8%E5%88%B0%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" class="next-prefix">» </a> 下一篇：    <a href="/2022/10/03/axios%E5%85%A5%E9%97%A8%E5%88%B0%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="发布于 2022-10-03 10:04">axios入门到源码分析</a>
+                    
+                </div>
+            </div>
+            
+    <div class="article-comments">
+        
+            <div class="comments-title">
+                评论列表
+            </div>
+        
+        <div class="comments-content"></div>
+    </div>
+
+        </div>
+    
+</div>
+    <div id="footer"></div>
+    <div id="sidebar">
+    <div class="menu-wrap" style="display:none;">
+        
+            <div class="menu-notice">
+                <span class="iconfont icon-notice"></span>
+                <div class="notice">
+                    <span>耶和华啊，认识你名的人要依靠你，因你没有离奇寻求你的人。</span>
+                </div>
+            </div>
+        
+        <nav class="menu">
+            <div class="menu-introduce"> 
+                <div class="introduce-avatar">
+                    <img src="/image/sidebar/avatar.jpg">
+                </div> 
+                <div class="introduce-info"> 
+                    <div class="introduce-user"><span>Aaron blog</span></div>
+                </div> 
+            </div> 
+            <div class="menu-list">
+                <ul>
+                    
+                        <li class=""><a href="/" class="" target="_self"><span class="iconfont icon-home-fill"></span>首页</a></li>
+                    
+                        <li class=""><a href="/category" class="" target="_self"><span class="iconfont icon-folder-fill"></span>分类</a></li>
+                    
+                        <li class=""><a href="/tag" class="" target="_self"><span class="iconfont icon-discount-fill"></span>标签</a></li>
+                    
+                        <li class=""><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
+                    
+                        <li class=""><a href="/donate" class="" target="_self"><span class="iconfont icon-heart-fill"></span>赞赏</a></li>
+                    
+                        <li class=""><a href="/about" class="" target="_self"><span class="iconfont icon-about-fill"></span>关于</a></li>
+                    
+                        <li class=""><a href="/atom.xml" class="" target="_blank"><span class="iconfont icon-rss"></span>订阅</a></li>
+                    
+                        <li class=""><a href="javascript:;" class="search" target="_self"><span class="iconfont icon-search-menu"></span>搜索</a></li>
+                    
+                        <li class=""><a href="/comment" class="" target="_self"><span class="iconfont icon-comments-fill"></span>留言板</a></li>
+                    
+                        <li class=""><a href="/friend" class="" target="_self"><span class="iconfont icon-link"></span>友情链接</a></li>
+                    
+                </ul> 
+            </div> 
+            <div class="menu-link">
+                <div class="box">
+                    <div class="image-box"></div>
+                </div>
+                
+                    <a name="知乎" href="https://zhihu.com/people/worstone-29" class="" target="_blank" data=""><span class="iconfont icon-zhihu"></span></a>
+                
+                    <a name="微博" href="https://weibo.com/u/5749847477" class="" target="_blank" data=""><span class="iconfont icon-weibo"></span></a>
+                
+                    <a name="QQ" href="javascript:;" class="image" target="_self" data="/image/sidebar/qq.png"><span class="iconfont icon-qq"></span></a>
+                
+                    <a name="微信" href="javascript:;" class="image" target="_self" data="/image/sidebar/wechat.png"><span class="iconfont icon-wechat"></span></a>
+                
+                    <a name="GitHub" href="https://github.com/enguang0207" class="" target="_blank" data=""><span class="iconfont icon-github"></span></a>
+                
+            </div> 
+        </nav>
+        <button class="menu-button-close"></button>
+        <div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+                <path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+            </svg>
+        </div>
+    </div>
+    <button class="menu-button-open">MENU</button>
+    <div class="menu-cover"></div>
+</div>
+    <link type="text/css" rel="stylesheet" href="/css/search.css">
+<script type="text/javascript" src="/js/iscroll.js"></script>
+<script type="text/javascript" src="/js/instantsearch.min.js"></script>
+<div class="search-window">
+    <div class="search-content">
+        <div class="search-content-icon">
+            <i class="iconfont icon-search"></i>
+        </div>
+        <div id="search-input" class="search-input"></div>
+    </div>
+
+    <div class="search-scroll">
+        <div class="search-result">
+            <div id="search-stats" class="search-stats"></div>
+            <div id="search-hits"></div>
+            <div id="search-pagination" class="search-pagination"></div>
+        </div>
+    </div>
+
+    <span class="search-close-icon">
+        <i class="iconfont icon-close"></i>
+    </span>
+</div>
+    <div id="tools">
+    <div class="progressbar-top"></div>
+
+    
+        <link type="text/css" rel="stylesheet" href="/css/APlayer.css">
+        <script type="text/javascript" src="/js/APlayer.min.js"></script>
+        <script type="text/javascript" src="/js/Meting.min.js"></script>
+        <meting-js id="3778678" lrcshow="false" server="netease" type="playlist" fixed="true" autoplay="false" loop="all" order="random" preload="auto" volume="0.67" mutex="true"></meting-js>
+    
+    
+    <div class="wrap-right">
+        <div class="setting">
+            <div class="iconbox favorites" switch="false">
+                <span class="iconfont icon-favorites"></span>
+                <span class="icontext">关注</span>
+            </div>
+            <div class="iconbox mode">
+                <div class="light">
+                    <span class="iconfont icon-daymode"></span>
+                    <span class="icontext">浅色模式</span>
+                </div>
+                <div class="dark">
+                    <span class="iconfont icon-nightmode-fill"></span>
+                    <span class="icontext">深色模式</span>
+                </div>
+            </div>
+            <a href="javascript:;" target="_self" class="search">
+                <div class="iconbox">
+                    <span class="iconfont icon-search-menu"></span>
+                    <span class="icontext">搜索</span>
+                </div>
+            </a>
+            <div class="iconbox bottom">
+                <div style="display: inline-block; transform: rotate(180deg);">
+                    <span class="iconfont icon-top"></span>
+                </div>
+                <span class="icontext">跳至底部</span>
+            </div>
+        </div>
+        <div class="iconbox set">
+            <div style="display: inline-block;">
+                <span class="iconfont icon-setting"></span>
+            </div>
+            <span class="icontext">设置</span>
+        </div>
+        <div class="iconbox top">
+            <span class="iconfont icon-top"></span>
+            <span class="icontext">返回顶部</span>
+        </div>
+    </div>
+    <div class="loading"></div>
+</div>
+    <script>
+    window.config = {
+        GitHubUserName     : "first19326",
+        GitHubRepositories : "Hexo-LiveForCode",
+
+        User             : "Aaron blog",
+        UserAvatar       : "/image/sidebar/avatar.jpg",
+        WebsiteStartDate : "2020-01-01",
+
+        WebsiteTitleBlur         : "(◍´꒳`◍) Hi, my name is Aaron",
+        WebsiteTitleBlurTimeOut  : 500,
+        WebsiteTitleFocus        : "(*´∇｀*) 欢迎回来!",
+        WebsiteTitleFocusTimeOut : 1000,
+        WebsiteFavicon           : "/image/website/logo.png",
+
+        ProgressBar : {
+            id       : "topProgressBar",
+            color    : "#77B6FF",
+            height   : "2px",
+            duration : 0.2
+        },
+
+        Loading: {
+            rebound : {
+                tension  : 16,
+                friction : 5
+            },
+            spinner : {
+                id     : "spinner",
+                radius : 90,
+                sides  : 3,
+                depth  : 4,
+                colors : {
+                    background : "#F0F0F0",
+                    stroke     : "#272633",
+                    base       : "",
+                    child      : "#272633"
+                },
+                alwaysForward : true,
+                restAt        : 0.5,
+                renderBase    : false
+            }
+        },
+
+        HomeHeaderAnimationRendered : true,
+        HomeHeaderAnimation         : {
+            radius      : 15,
+            density     : 0.2,
+            color       : "rgba(255, 255, 255, .2)",
+            clearOffset : 0.3
+        },
+
+        BackAnimationRendered          : true,
+        IEBrowserBackAnimationRendered : false,
+        BackAnimation                  : {
+            colorSaturation  : "60%",
+            colorBrightness  : "50%",
+            colorAlpha       : 0.5,
+            colorCycleSpeed  : 5,
+            verticalPosition : "random",
+            horizontalSpeed  : 200,
+            ribbonCount      : 3,
+            strokeSize       : 0,
+            parallaxAmount   : -0.2,
+            animateSections  : true
+        },
+
+        HomeHeaderImage : [
+            
+                "/image/header/home.jpg",
+            
+                "/image/header/home.jpeg",
+            
+        ],
+        HomeBannerText  : "",
+
+        ArticleHeaderImage : [
+            
+                "/image/header/article.jpg",
+            
+        ],
+
+        OtherBannerText : "",
+
+        Error : {
+            icon    : "icon-swimming",
+            title   : "PAGE NOT FOUND",
+            content : [
+                
+                    "很抱歉，您访问的页面不存在！",
+                
+                    "可能是输入地址有误或该地址已变更。",
+                
+            ],
+            buttons : [
+                
+                    {
+                        icon  : "icon-home",
+                        text  : "返回首页",
+                        href  : "/",
+                        class : ""
+                    },
+                
+            ]
+        },
+
+        MenuNotice : {
+            enable : true,
+            notice : "耶和华啊，认识你名的人要依靠你，因你没有离奇寻求你的人。",
+            speed  : 20
+        },
+        MenuList : [
+            
+                {
+                    name   : "首页",
+                    icon   : "icon-home-fill",
+                    href   : "/",
+                    type   : "index",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : "分类",
+                    icon   : "icon-folder-fill",
+                    href   : "/category",
+                    type   : "category",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : "标签",
+                    icon   : "icon-discount-fill",
+                    href   : "/tag",
+                    type   : "tag",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : "归档",
+                    icon   : "icon-calendar-fill",
+                    href   : "/archive",
+                    type   : "archive",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : "赞赏",
+                    icon   : "icon-heart-fill",
+                    href   : "/donate",
+                    type   : "donate",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : "关于",
+                    icon   : "icon-about-fill",
+                    href   : "/about",
+                    type   : "about",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : "订阅",
+                    icon   : "icon-rss",
+                    href   : "/atom.xml",
+                    type   : "",
+                    class  : "",
+                    target : "_blank"
+                },
+            
+                {
+                    name   : "搜索",
+                    icon   : "icon-search-menu",
+                    href   : "javascript:;",
+                    type   : "",
+                    class  : "search",
+                    target : "_self"
+                },
+            
+                {
+                    name   : "留言板",
+                    icon   : "icon-comments-fill",
+                    href   : "/comment",
+                    type   : "comment",
+                    class  : "",
+                    target : "_self"
+                },
+            
+                {
+                    name   : "友情链接",
+                    icon   : "icon-link",
+                    href   : "/friend",
+                    type   : "friend",
+                    class  : "",
+                    target : "_self"
+                },
+            
+        ],
+        MenuLink : [
+            
+                
+                    {
+                        name   : "知乎",
+                        icon   : "icon-zhihu",
+                        href   : "https://zhihu.com/people/worstone-29",
+                        class  : "",
+                        target : "_blank",
+                        image  : ""
+                    },
+                
+                    {
+                        name   : "微博",
+                        icon   : "icon-weibo",
+                        href   : "https://weibo.com/u/5749847477",
+                        class  : "",
+                        target : "_blank",
+                        image  : ""
+                    },
+                
+                    {
+                        name   : "QQ",
+                        icon   : "icon-qq",
+                        href   : "javascript:;",
+                        class  : "image",
+                        target : "_self",
+                        image  : "/image/sidebar/qq.png"
+                    },
+                
+                    {
+                        name   : "微信",
+                        icon   : "icon-wechat",
+                        href   : "javascript:;",
+                        class  : "image",
+                        target : "_self",
+                        image  : "/image/sidebar/wechat.png"
+                    },
+                
+                    {
+                        name   : "GitHub",
+                        icon   : "icon-github",
+                        href   : "https://github.com/enguang0207",
+                        class  : "",
+                        target : "_blank",
+                        image  : ""
+                    },
+                
+            
+        ],
+
+        FooterStyle : 2,
+        BottomText  : "<div><span class='face'>ღゝ◡╹)ノ♡</span></div><div>【人生若只如初见<span><i class='iconfont icon-like-fill'></i></span>何事秋风悲画扇】</div><div>&copy; 2020-2022 WorstOne. All Rights Reserved.</div>",
+
+        ConsoleList : [
+            
+                
+                    [
+                        
+                            
+                                "Based on cnblogs theme SimpleMemory.",
+                            
+                                "",
+                            
+                        
+                    ],
+                
+                    [
+                        
+                            
+                                "SimpleMemory Author:",
+                            
+                                "BNDong",
+                            
+                        
+                    ],
+                
+                    [
+                        
+                            
+                                "Theme:",
+                            
+                                "LiveForCode",
+                            
+                        
+                    ],
+                
+            
+        ],
+
+        FontIconExtend : "",
+
+        Donate : {
+            paypal  : "",
+            bitcoin : "",
+            alipay  : "/image/donate/alipay.png",
+            wechat  : "/image/donate/wechat.png"
+        },
+
+        Search : {
+            applicationID : "010C3EANT8",
+            apiKey        : "c7abab9f11b79102b9aff7fe6d41447d",
+            indexName     : "Notes",
+            hits          : {
+                page : 10
+            },
+            labels        : {
+                placeholder : "搜索",
+                empty       : "未发现与 「${query}」 相关的内容",
+                stats       : "${hits} 条相关条目，使用了 ${time} 毫秒",
+            }
+        }, 
+
+        Valine : {
+            switch         : true,
+            el             : ".comments-content",
+            appId          : "srhKtvWPQTWYKh3qX8G8M7v0-gzGzoHsz",
+            appKey         : "8uVSP1q6UlALVC5igYfIfv2h",
+            serverURLs     : "",
+            placeholder    : "你是我一生只会遇见一次的惊喜...",
+            avatar         : "mm",
+            meta           : "nick,mail,link",
+            requiredFields : "nick,mail",
+            pageSize       : 5,
+            lang           : "zh-cn",
+            visitor        : true,
+            enableQQ       : true
+        },
+
+        Tocbot : {
+            switch                : true,
+            tocSelector           : ".toc",
+            contentSelector       : ".article-body",
+            headingSelector       : "h1, h2, h3, h4, h5",
+            headingsOffset        : 0,
+            scrollSmooth          : true,
+            scrollSmoothOffset    : -5,
+            positionFixedSelector : ".toc",
+            positionFixedClass    : "toc-fixed",
+            fixedSidebarOffset    : "",
+        },
+
+        Require : {
+            baseUrl     : "/js/",
+            waitSeconds : 100
+        },
+
+        Music : {
+            type : "Meting"
+        },
+        APlayer : {
+            container : ".aplayer",
+            fixed     : true,
+            autoplay  : false,
+            loop      : "all",
+            order     : "random",
+            preload   : "auto",
+            volume    : 0.67,
+            mutex     : true,
+            lrcType   : 3,
+            audio     : [
+                
+                    {
+                        name   : "Endless Tears",
+                        artist : "CLIFF EDGE",
+                        cover  : "/music/cover/Endless Tears.jpg",
+                        url    : "/music/song/Endless Tears.mp3",
+                        lrc    : "/music/lrc/Endless Tears.lrc"
+                    },
+                
+            ]
+        },
+        Meting : {
+            id       : "3778678", 
+            lrcshow  : false, 
+            server   : "netease", 
+            type     : "playlist", 
+            fixed    : true, 
+            autoplay : false, 
+            loop     : "all", 
+            order    : "random", 
+            preload  : "auto", 
+            volume   : 0.67, 
+            mutex    : true
+        },
+
+        Mouse : {
+            enable  : true,
+            options : {
+                size  : 6,
+                sizeF : 24
+            }
+        },
+
+        LazyLoad : {
+            default : "/image/website/lazyload.svg"
+        },
+  
+        Style : {
+            aplayer          : "/css/APlayer.css",
+            archive          : "/css/archive.css",
+            base             : "/css/base.css",
+            clipboard        : "/css/clipboard.css",
+            code             : "/css/code.css",
+            donate           : "/css/donate.css",
+            fancybox         : "/css/jquery.fancybox.css",
+            footer           : "/css/footer.css",
+            iconfont         : "/iconfont/iconfont.css",
+            index            : "/css/index.css",
+            menuBubble       : "/css/menu-bubble.css",
+            mouse            : "/css/mouse.css",
+            page             : "/css/page.css",
+            post             : "/css/post.css",
+            search           : "/css/search.css",
+            tocbot           : "/css/tocbot.css",
+            valine           : "/css/valine.css"
+        },
+
+        Script: {
+            aplayer          : "/js/APlayer.min.js",
+            config           : "/js/require.config.js",
+            index            : "/js/index.js",
+            instantSearch    : "/js/instantsearch.min.js",
+            iscroll          : "/js/iscroll.js",
+            jQuery           : "/js/jquery-3.4.1.min.js",
+            loading          : "/js/loading.js",
+            meting           : "/js/Meting.min.js",
+            require          : "/js/require.min.js"
+        },
+
+        Font: {
+            LongCang    : "/font/LongCang.css",
+            Monda       : "/font/Monda.css",
+            NotoSansSC  : "/font/NotoSansSC.css",
+            NotoSerifSC : "/font/NotoSerifSC.css",
+            Playball    : "/font/Playball.css",
+            PTMono      : "/font/PTMono.css",
+            Roboto      : "/font/Roboto.css",
+            RobotoSlab  : "/font/RobotoSlab.css",
+            Rosario     : "/font/Rosario.css",
+            UbuntuMono  : "/font/UbuntuMono.css"
+        },
+
+        Suffix : {
+            about : "简单地活着, 肆意又精彩."
+        },
+            
+        Theme : {
+            url  : "https://github.com/first19326/Hexo-LiveForCode",
+            name : "Hexo - Live For Code"
+        }  
+    };
+</script>
+    <script type="text/javascript" src="/js/index.js"></script>
+</body>
+</html>

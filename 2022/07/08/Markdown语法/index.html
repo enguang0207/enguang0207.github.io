@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            归档
+            Markdown语法的基本使用
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -32,15 +32,36 @@
 </head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/archive.css">
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">归档</h1>
+                <h1 class="header-subtitle">Markdown语法的基本使用</h1>
                 <div class="header-subinfo">
-                    <p class="article-info-text Chinese"></p>
-                    <p class="article-info-text English"></p>                  
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2022-07-08
+                        </span>
+                        
+                            <span id="/2022/07/08/Markdown语法/" class="leancloud_visitors" data-flag-title="Markdown语法的基本使用">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/07/08/Markdown语法/"></span>
+                        </span>  
+                    </p>
+                    
+                        
+                            <span class="category-color">工具使用</span>
+                        
+                    
+                    
+                        
+                            <span class="tag-color">Markdown</span>
+                        
+                    
                 </div>
             
         </div>
@@ -49,57 +70,110 @@
 </div>
 <div id="container">
     
-        
-            <!-- 归档页面、分类归档页面、标签归档页面 -->
-            <div class="articles">
-                <div class="articles-wrap">
-                    <span class="archive-move-on"></span>
-                    <span class="archive-counter">
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                <h2 id="1，创建代码块"><a href="#1，创建代码块" class="headerlink" title="1，创建代码块"></a>1，创建代码块</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码块:英文状态下```</span><br></pre></td></tr></table></figure>
+
+<h2 id="2，标题"><a href="#2，标题" class="headerlink" title="2，标题"></a>2，标题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标题语法</span></span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="3，字体"><a href="#3，字体" class="headerlink" title="3，字体"></a>3，字体</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加粗  (建议右击—&gt;B（加粗）)</span></span><br><span class="line">**字体加粗**</span><br><span class="line"><span class="comment">//代码高亮显示</span></span><br><span class="line">==高亮显示==</span><br><span class="line"><span class="comment">//删除线</span></span><br><span class="line">  ~~被删除的文字~~</span><br><span class="line"><span class="comment">//斜线</span></span><br><span class="line">*斜体内容*</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F;加粗<br><strong>字体加粗</strong><br>&#x2F;&#x2F;代码高亮显示<br>&#x3D;&#x3D;高亮显示&#x3D;&#x3D;<br>&#x2F;&#x2F;删除线<br>  <del>被删除的文字</del><br>&#x2F;&#x2F;斜线<br><em>斜体内容</em></p>
+<h2 id="4，引用"><a href="#4，引用" class="headerlink" title="4，引用"></a>4，引用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引用语法</span></span><br><span class="line">&gt;作者</span><br><span class="line">&gt;&gt;作者</span><br><span class="line">&gt;&gt;&gt;作者</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F;引用语法</p>
+<blockquote>
+<p>作者</p>
+<blockquote>
+<p>作者</p>
+<blockquote>
+<p>作者</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="5，分割线"><a href="#5，分割线" class="headerlink" title="5，分割线"></a>5，分割线</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//分割线</span></span><br><span class="line">---（细小）</span><br><span class="line">  ***（宽大）</span><br></pre></td></tr></table></figure>
+
+<h2 id="x2F-x2F-分割线"><a href="#x2F-x2F-分割线" class="headerlink" title="&#x2F;&#x2F;分割线"></a>&#x2F;&#x2F;分割线</h2><hr>
+<h2 id="6-图片的插入"><a href="#6-图片的插入" class="headerlink" title="6.图片的插入"></a>6.图片的插入</h2><p><strong>快捷键：Ctrl+shift+i</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在线图片/本地图片（网上图片复制链接）</span></span><br><span class="line">![我的图片](/image/me.png)--图片路径</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F;在线图片&#x2F;本地图片<br><img src="/image/me.png" alt="我的图片">–图片路径</p>
+<p><img src="/image/me.png" alt="我的图片">–图片路径</p>
+<h2 id="7，超链接"><a href="#7，超链接" class="headerlink" title="7，超链接"></a>7，超链接</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//超链接语法</span></span><br><span class="line">[百度主页](https:<span class="comment">//www.baidu.com/?tn=40020637_5_oem_dg)</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F;超链接语法<br><a target="_blank" rel="noopener" href="https://www.baidu.com/?tn=40020637_5_oem_dg">百度主页</a></p>
+<h2 id="8，列表语法"><a href="#8，列表语法" class="headerlink" title="8，列表语法"></a>8，列表语法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无序列表</span></span><br><span class="line">- 目录<span class="number">1</span></span><br><span class="line">- 目录<span class="number">2</span></span><br><span class="line">- 目录<span class="number">3</span></span><br><span class="line"><span class="comment">//有序列表</span></span><br><span class="line">数字+ . 名称</span><br><span class="line">例如：</span><br><span class="line"><span class="number">1</span> . 首页</span><br><span class="line"><span class="number">2</span> . 分类</span><br><span class="line"><span class="number">3</span> . 页眉</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F;无序列表</p>
+<ul>
+<li>目录1</li>
+<li>目录2</li>
+<li>目录3<br>&#x2F;&#x2F;有序列表<br>数字+ . 名称<br>例如：<br>1 . 首页<br>2 . 分类<br>3 . 页眉</li>
+<li>世界你好</li>
+<li>我很好</li>
+<li>你呢</li>
+</ul>
+<h2 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h2><p>鼠标右击——点击插入——表格</p>
+
+                
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="Aaron blog">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>Aaron blog
+        <br>
+        <span class="suffix-box-title">文章出处：</span><a href="/2022/07/08/Markdown%E8%AF%AD%E6%B3%95/" target="_blank">Markdown语法的基本使用</a>
+        <br>
+        <span class="suffix-box-title">作者签名：</span>简单地活着, 肆意又精彩.
+        <br>
+        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+                
+                    <div class="category">
+                        分类：
                         
-                            目前共计 10 篇日志，继续加油！
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
                         
-                    </span>
-                    
-                    
+                    </div>
+                
+                
+                    <div class="tag">
+                        标签：
                         
-                            <div class="archive-title">
-                                <h2 class="archive-year">2022</h2>
-                            </div>
-                            
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2022/12/31/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8/"><span>计算属性</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">12-31</span>
-                                </div>
-                            </div>
-                        </div>
+                            <a href="/tags/Markdown/">Markdown</a>
+                        
+                    </div>
+                
+                <div class="article-prev-next">
                     
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2022/12/31/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/"><span>数据代理的使用</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">12-31</span>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="/2022/09/30/promise%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" class="prev-prefix">« </a> 上一篇：    <a href="/2022/09/30/promise%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" title="发布于 2022-09-30 07:09">promise入门到进阶</a>
+                        <br>
                     
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/"><span>hexo搭建博客--未生成index.html文件</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">12-21</span>
-                                </div>
-                            </div>
-                        </div>
                     
                 </div>
             </div>
             
+    <div class="article-comments">
         
+            <div class="comments-title">
+                评论列表
+            </div>
+        
+        <div class="comments-content"></div>
+    </div>
+
+        </div>
     
 </div>
     <div id="footer"></div>
@@ -131,7 +205,7 @@
                     
                         <li class=""><a href="/tag" class="" target="_self"><span class="iconfont icon-discount-fill"></span>标签</a></li>
                     
-                        <li class=" active "><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
+                        <li class=""><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
                     
                         <li class=""><a href="/donate" class="" target="_self"><span class="iconfont icon-heart-fill"></span>赞赏</a></li>
                     
