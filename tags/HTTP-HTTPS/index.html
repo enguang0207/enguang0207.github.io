@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            hexo搭建博客--未生成index.html文件
+            标签 - HTTP HTTPS
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -32,28 +32,15 @@
 </head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/post.css">
+    <link type="text/css" rel="stylesheet" href="/css/archive.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">hexo搭建博客--未生成index.html文件</h1>
+                <h1 class="header-subtitle">标签归档</h1>
                 <div class="header-subinfo">
-                    <p class="article-info-text">
-                        <span>
-                            <i class="iconfont icon-time"></i> 发表时间：2022-12-21
-                        </span>
-                        
-                            <span id="/2022/12/21/hexo搭建博客-未生成index-html文件/" class="leancloud_visitors" data-flag-title="hexo搭建博客--未生成index.html文件">
-                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
-                            </span>
-                        
-                        <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/12/21/hexo搭建博客-未生成index-html文件/"></span>
-                        </span>  
-                    </p>
-                    
-                    
+                    <p class="article-info-text Chinese"></p>
+                    <p class="article-info-text English"></p>                  
                 </div>
             
         </div>
@@ -62,79 +49,37 @@
 </div>
 <div id="container">
     
-        <!-- 文章页面 -->
-        <div id="article">
-            <div class="toc"></div>
-            <div class="article-body">
-                <ul>
-<li><strong>问题</strong></li>
-</ul>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo搭建blog部署到GitHub，然后打开自己的blog，发现出现404，页面丢失。</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>原因</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">仔细一下GitHub的blog仓库中没有index.html文件，也就是在搭建hexo时候生成的public文件夹中没有index.html文件，所以导致在部署远端时也就不存在index.html文件。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>解决问题：</strong></p>
-<p>【出现上述原因是因为我们不小心把_posts文件夹给删除掉】</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;我的blog&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>执行这个命令，它会自动生成一个_posts文件夹，然后文件夹里面有一个“我的blog”的文章</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  <span class="comment">//清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g   <span class="comment">//生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d   <span class="comment">//自动生成网站静态文件，并部署到设定的仓库。</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>依次执行hexo的三连环，将文件部署到远端仓库。【如果一次不成，多执行几次】</li>
-</ul>
-</li>
-</ul>
-
-                
-                <p class="end">__END__</p>
-            </div>
-            <div class="article-footer">
-                <div class="suffix-box">
-    <div class="suffix-box-left">
-        <img src="/image/sidebar/avatar.jpg" alt="Aaron blog">
-    </div>
-    <div class="suffix-box-right">
-        <span class="suffix-box-title">文章作者：</span>Aaron blog
-        <br>
-        <span class="suffix-box-title">文章出处：</span><a href="/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/" target="_blank">hexo搭建博客--未生成index.html文件</a>
-        <br>
-        <span class="suffix-box-title">作者签名：</span>简单地活着, 肆意又精彩.
-        <br>
-        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
-        <br>
-        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
-        <br>
-    </div>
-    <div style="clear: both;"></div>
-</div>
-                
-                
-                <div class="article-prev-next">
-                    
-                        <a href="/2022/12/31/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/" class="prev-prefix">« </a> 上一篇：    <a href="/2022/12/31/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/" title="发布于 2022-12-31 04:37">数据代理的使用</a>
-                        <br>
+        
+            <!-- 归档页面、分类归档页面、标签归档页面 -->
+            <div class="articles">
+                <div class="articles-wrap">
+                    <span class="archive-move-on"></span>
+                    <span class="archive-counter">
+                        
+                            当前标签：<span class="tag">HTTP HTTPS</span>
+                        
+                    </span>
                     
                     
-                        <a href="/2022/12/03/HTTP%E4%B8%8EHTTPS%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8C%BA%E5%88%AB/" class="next-prefix">» </a> 下一篇：    <a href="/2022/12/03/HTTP%E4%B8%8EHTTPS%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8C%BA%E5%88%AB/" title="发布于 2022-12-03 08:18">HTTP与HTTPS有哪些区别</a>
+                        
+                            <div class="archive-title">
+                                <h2 class="archive-year">2022</h2>
+                            </div>
+                            
+                           
+                        <div class="article">
+                            <div class="article-header">
+                                <h1 class="article-title"><a href="/2022/12/03/HTTP%E4%B8%8EHTTPS%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8C%BA%E5%88%AB/"><span>HTTP与HTTPS有哪些区别</span></a></h1>
+                                <div class="article-meta">
+                                    <span class="article-time">12-03</span>
+                                </div>
+                            </div>
+                        </div>
                     
                 </div>
             </div>
             
-    <div class="article-comments">
         
-            <div class="comments-title">
-                评论列表
-            </div>
-        
-        <div class="comments-content"></div>
-    </div>
-
-        </div>
     
 </div>
     <div id="footer"></div>

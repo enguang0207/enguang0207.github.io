@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            hexo搭建博客--未生成index.html文件
+            HTTP与HTTPS有哪些区别
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -37,22 +37,30 @@
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">hexo搭建博客--未生成index.html文件</h1>
+                <h1 class="header-subtitle">HTTP与HTTPS有哪些区别</h1>
                 <div class="header-subinfo">
                     <p class="article-info-text">
                         <span>
-                            <i class="iconfont icon-time"></i> 发表时间：2022-12-21
+                            <i class="iconfont icon-time"></i> 发表时间：2022-12-03
                         </span>
                         
-                            <span id="/2022/12/21/hexo搭建博客-未生成index-html文件/" class="leancloud_visitors" data-flag-title="hexo搭建博客--未生成index.html文件">
+                            <span id="/2022/12/03/HTTP与HTTPS有哪些区别/" class="leancloud_visitors" data-flag-title="HTTP与HTTPS有哪些区别">
                                 <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
                             </span>
                         
                         <span>
-                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/12/21/hexo搭建博客-未生成index-html文件/"></span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2022/12/03/HTTP与HTTPS有哪些区别/"></span>
                         </span>  
                     </p>
                     
+                        
+                            <span class="category-color">网路</span>
+                        
+                    
+                    
+                        
+                            <span class="tag-color">HTTP HTTPS</span>
+                        
                     
                 </div>
             
@@ -66,28 +74,25 @@
         <div id="article">
             <div class="toc"></div>
             <div class="article-body">
-                <ul>
-<li><strong>问题</strong></li>
-</ul>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo搭建blog部署到GitHub，然后打开自己的blog，发现出现404，页面丢失。</span><br></pre></td></tr></table></figure>
+                <h1 id="什么是HTTP-x2F-HTTPS-HTTP-和-HTTPS-的区别"><a href="#什么是HTTP-x2F-HTTPS-HTTP-和-HTTPS-的区别" class="headerlink" title="什么是HTTP&#x2F;HTTPS ? HTTP 和 HTTPS 的区别?"></a>什么是HTTP&#x2F;HTTPS ? HTTP 和 HTTPS 的区别?</h1><h4 id="1，HTTP"><a href="#1，HTTP" class="headerlink" title="1，HTTP"></a>1，HTTP</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP (HyperText Transfer Protocol：超文本传输协议) 是一种用于分布式、协作式和超媒体信息系统的应用层协议。 简单来说就是一种发布和接收 HTML 页面的方法，被用于在 Web 浏览器和网站服务器之间传递信息。</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p><strong>原因</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">仔细一下GitHub的blog仓库中没有index.html文件，也就是在搭建hexo时候生成的public文件夹中没有index.html文件，所以导致在部署远端时也就不存在index.html文件。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>解决问题：</strong></p>
-<p>【出现上述原因是因为我们不小心把_posts文件夹给删除掉】</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;我的blog&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>执行这个命令，它会自动生成一个_posts文件夹，然后文件夹里面有一个“我的blog”的文章</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  <span class="comment">//清除缓存文件 db.json 和已生成的静态文件 public</span></span><br><span class="line">hexo g   <span class="comment">//生成网站静态文件到默认设置的 public 文件夹</span></span><br><span class="line">hexo d   <span class="comment">//自动生成网站静态文件，并部署到设定的仓库。</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>依次执行hexo的三连环，将文件部署到远端仓库。【如果一次不成，多执行几次】</li>
+<li>特点<ul>
+<li>支持客户&#x2F;服务器模式</li>
+<li>简单快速：客户向服务器请求服务时，只需传送请求方法和路径。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快</li>
+<li>灵活：HTTP允许传输任意类型的数据对象。正在传输的类型由Content-Type加以标记</li>
+<li>无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间</li>
+<li>无状态：HTTP协议无法根据之前的状态进行本次的请求处理</li>
 </ul>
 </li>
+</ul>
+<h4 id="2，HTTPS"><a href="#2，HTTPS" class="headerlink" title="2，HTTPS"></a>2，HTTPS</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTPS（Hypertext Transfer Protocol Secure：超文本传输安全协议）是一种透过计算机网络进行安全通信的传输协议。HTTPS 经由 HTTP 进行通信，但利用 SSL/TLS 来加密数据包。HTTPS 开发的主要目的，是提供对网站服务器的身份认证，保护交换数据的隐私与完整性。</span><br></pre></td></tr></table></figure>
+
+<h4 id="3，HTTP-和-HTTPS的区别"><a href="#3，HTTP-和-HTTPS的区别" class="headerlink" title="3，HTTP 和 HTTPS的区别"></a>3，HTTP 和 HTTPS的区别</h4><ul>
+<li><code>HTTP</code> 明文传输，数据都是未加密的，安全性较差，<code>HTTPS</code>（SSL+HTTP） 数据传输过程是加密的，安全性较好。</li>
+<li><code>HTTP</code> 页面响应速度比 <code>HTTPS</code> 快，主要是因为 <code>HTTP</code> 使用 TCP 三次握手建立连接，客户端和服务器需要交换 3 个包，而 <code>HTTPS</code>除了 TCP 的三个包，还要加上 ssl 握手需要的 9 个包，所以一共是 12 个包。</li>
+<li><code>HTTP</code>和<code>HTTPS</code> 使用的是完全不同的连接方式，用的端口也不一样，前者是 80，后者是 443。</li>
+<li><code>HTTPS</code> 其实就是建构在 SSL&#x2F;TLS 之上的 <code>HTTP</code> 协议，所以，要比较 <code>HTTPS</code> 比 <code>HTTP</code> 要更耗费服务器资源。</li>
 </ul>
 
                 
@@ -101,7 +106,7 @@
     <div class="suffix-box-right">
         <span class="suffix-box-title">文章作者：</span>Aaron blog
         <br>
-        <span class="suffix-box-title">文章出处：</span><a href="/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/" target="_blank">hexo搭建博客--未生成index.html文件</a>
+        <span class="suffix-box-title">文章出处：</span><a href="/2022/12/03/HTTP%E4%B8%8EHTTPS%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8C%BA%E5%88%AB/" target="_blank">HTTP与HTTPS有哪些区别</a>
         <br>
         <span class="suffix-box-title">作者签名：</span>简单地活着, 肆意又精彩.
         <br>
@@ -113,14 +118,28 @@
     <div style="clear: both;"></div>
 </div>
                 
+                    <div class="category">
+                        分类：
+                        
+                            <a href="/categories/%E7%BD%91%E8%B7%AF/">网路</a>
+                        
+                    </div>
+                
+                
+                    <div class="tag">
+                        标签：
+                        
+                            <a href="/tags/HTTP-HTTPS/">HTTP HTTPS</a>
+                        
+                    </div>
                 
                 <div class="article-prev-next">
                     
-                        <a href="/2022/12/31/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/" class="prev-prefix">« </a> 上一篇：    <a href="/2022/12/31/%E6%95%B0%E6%8D%AE%E4%BB%A3%E7%90%86/" title="发布于 2022-12-31 04:37">数据代理的使用</a>
+                        <a href="/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/" class="prev-prefix">« </a> 上一篇：    <a href="/2022/12/21/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E6%9C%AA%E7%94%9F%E6%88%90index-html%E6%96%87%E4%BB%B6/" title="发布于 2022-12-21 09:51">hexo搭建博客--未生成index.html文件</a>
                         <br>
                     
                     
-                        <a href="/2022/12/03/HTTP%E4%B8%8EHTTPS%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8C%BA%E5%88%AB/" class="next-prefix">» </a> 下一篇：    <a href="/2022/12/03/HTTP%E4%B8%8EHTTPS%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8C%BA%E5%88%AB/" title="发布于 2022-12-03 08:18">HTTP与HTTPS有哪些区别</a>
+                        <a href="/2022/11/08/node.js%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="next-prefix">» </a> 下一篇：    <a href="/2022/11/08/node.js%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="发布于 2022-11-08 04:10">node的基本使用</a>
                     
                 </div>
             </div>
